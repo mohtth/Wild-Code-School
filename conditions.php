@@ -14,14 +14,14 @@ if ($opponentWeapon == 'gun')
     $indyWeapon = 'whip';
 }
 
-// sino si l'opposant a le poing perd contre le pistolet
-elseif ($opponentWeapon == 'whip') 
+// sinon si l'opposant a le poing perd contre le pistolet
+elseif ($opponentWeapon == 'fists') 
 {
     $indyWeapon = 'gun';
 }
 
-// sino si l'opposant a fouet perd contre le poing
-elseif ($opponentWeapon == 'gun') 
+// sinon si l'opposant a fouet perd contre le poing
+elseif ($opponentWeapon == 'whip') 
 {
     $indyWeapon = 'fists';
 }
