@@ -1,0 +1,48 @@
+mysql> INSERT INTO school (name, capacity, country) VALUES    
+    -> ('Beauxbatons Academy of Magic','550','France'),
+    -> ('Castelobruxo','380','Brazil'),
+    -> ('Durmstrang Institute', '570','Norway'),
+    -> ('Hogwarts School of Witchcraft and Wizardry','450','United Kingdom'),
+    -> ('Ilvermorny School of Witchcraft and Wizardry','300','USA'),
+    -> ('Koldovstoretz','125','Russia'),
+    -> ('Mahoutokoro School of Magic','800','Japan'),
+    -> ('Uagadou School of Magic','350','Uganda');
+Query OK, 8 rows affected (0.08 sec)
+
+mysql> select * from school;
++----+----------------------------------------------+----------+----------------+
+| id | name                                         | capacity | country        |
++----+----------------------------------------------+----------+----------------+
+|  1 | Beauxbatons Academy of Magic                 |      550 | France         |
+|  2 | Castelobruxo                                 |      380 | Brazil         |
+|  3 | Durmstrang Institute                         |      570 | Norway         |
+|  4 | Hogwarts School of Witchcraft and Wizardry   |      450 | United Kingdom |
+|  5 | Ilvermorny School of Witchcraft and Wizardry |      300 | USA            |
+|  6 | Koldovstoretz                                |      125 | Russia         |
+|  7 | Mahoutokoro School of Magic                  |      800 | Japan          |
+|  8 | Uagadou School of Magic                      |      350 | Uganda         |
++----+----------------------------------------------+----------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> UPDATE school SET country = 'Sweden' WHERE id = 7;
+Query OK, 1 row affected (0.12 sec)
+Enregistrements correspondants: 1  Modifi├®s: 1  Warnings: 0
+
+mysql> UPDATE school SET capacity= '700' WHERE id = 7;
+Query OK, 1 row affected (0.00 sec)
+Enregistrements correspondants: 1  Modifi├®s: 1  Warnings: 0
+
+mysql> DELETE FROM school WHERE id IN (1, 7, 8);
+Query OK, 3 rows affected (0.11 sec)
+
+mysql> select * from school;
++----+----------------------------------------------+----------+----------------+
+| id | name                                         | capacity | country        |
++----+----------------------------------------------+----------+----------------+
+|  2 | Castelobruxo                                 |      380 | Brazil         |
+|  3 | Durmstrang Institute                         |      570 | Norway         |
+|  4 | Hogwarts School of Witchcraft and Wizardry   |      450 | United Kingdom |
+|  5 | Ilvermorny School of Witchcraft and Wizardry |      300 | USA            |
+|  6 | Koldovstoretz                                |      125 | Russia         |
++----+----------------------------------------------+----------+----------------+
+5 rows in set (0.00 sec)
