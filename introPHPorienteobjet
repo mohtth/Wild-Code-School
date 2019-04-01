@@ -1,0 +1,59 @@
+<?php
+
+class personne{
+// Attributs
+  public $nom;
+  public $prenom;
+  public $adresse;
+  public $dateNaissance;
+  public $age;
+
+  // Methodes
+  public function __construct ($nom, $prenom, $adresse, $dateNaissance){
+    $this->nom=$nom;
+    $this->prenom=$prenom;
+    $this->adresse=$adresse;
+    $this->dateNaissance=$dateNaissance;
+  }
+
+  public function info(){
+    echo 'Nom : '.$this->nom;
+    echo '</br>Prénom : '.$this->prenom;
+    echo '</br>Adresse : '.$this->adresse;
+    echo '</br>Date de naissance : '.$this->dateNaissance;
+    echo '</br>';
+  }
+  
+  public function setAdresse($adresse){
+    $this->adresse=$adresse;
+    echo '</br>Nouvelle adresse : '.$this->adresse;
+    echo '</br>';
+  }
+
+  public function age(){
+    $this->dateNaissance;
+    $dna = strtotime($this->dateNaissance);
+    $now = time();
+
+    $age = date('Y',$now)-date('Y',$dna);
+    if(strcmp(date('md', $dna),date('md', $now))>0) $age--;
+
+      $this->age=$age;
+      echo '</br>Age : '.$age;
+
+  }
+}
+
+// Objet de type personne et définition attributs
+$pers1 = new personne ("LeNom", "Yaya", "1 rue des fous - 67000 Strasbourg", "05/12/1945");
+
+//Obtenir les atttributs
+$pers1->info();
+
+//Changer l'adresse
+$pers1->setAdresse("69 rue de la Paix - 67100 Strasbourg");
+
+//Obtention age
+$pers1->age();
+
+?>
