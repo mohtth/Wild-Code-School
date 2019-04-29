@@ -1,1 +1,41 @@
+mysql> use wild_db_quest
+Database changed
 
+mysql> SELECT team.name AS nom_equipe, COUNT(player.id) AS nb_joueurs FROM player
+JOIN team ON player.team_id = team.id GROUP BY nom_equipe ORDER BY nb_joueurs DESC;
++------------+------------+
+| nom_equipe | nb_joueurs |
++------------+------------+
+| Gryffindor |         36 |
+| Slytherin  |         21 |
+| Ravenclaw  |         15 |
+| Hufflepuff |         12 |
++------------+------------+
+4 rows in set (0,00 sec)
+
+mysql> SELECT team.name AS nom_equipe, COUNT(player.id) AS nb_joueurs FROM player
+JOIN team ON player.team_id = team.id GROUP BY nom_equipe HAVING nb_joueurs >= 14 ORDER BY nom_equipe;
++------------+------------+
+| nom_equipe | nb_joueurs |
++------------+------------+
+| Gryffindor |         36 |
+| Ravenclaw  |         15 |
+| Slytherin  |         21 |
++------------+------------+
+3 rows in set (0,00 sec)
+
+mysql> SELECT firstname, lastname, enrollment_date FROM player JOIN wizard ON player.wizard_id = wizard.id
+JOIN team ON player.team_id = team.id WHERE team.name = 'Gryffindor' and DAYOFWEEK(enrollment_date) = 2
+ORDER BY enrollment_date;
++-----------+------------+-----------------+
+| firstname | lastname   | enrollment_date |
++-----------+------------+-----------------+
+| George    | Weasley    | 1991-08-26      |
+| Alice     | Longbottom | 1992-02-17      |
+| Cadogan   |            | 1993-01-04      |
+| Godric    | Gryffindor | 1993-08-30      |
+| Sirius    | Black      | 1994-01-10      |
+| Aberforth | Dumbledore | 1995-04-24      |
+| Augusta   | Longbottom | 1999-10-25      |
++-----------+------------+-----------------+
+7 rows in set (0,00 sec)
