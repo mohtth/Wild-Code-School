@@ -1,3 +1,13 @@
+TEXTE:
+Matrix (31/03/1999) - 130 minutes
+
+IMDB note 9/10 (https://www.imdb.com/title/tt0133093)
+
+Thomas A. Anderson (Keanu Reeves), un jeune informaticien connu dans le monde du hacking sous le pseudonyme de Neo, est contacté via son ordinateur par ce qu’il pense être un groupe de hackers. Ils lui font découvrir que le monde dans lequel il vit n’est qu’un monde virtuel, la matrice, dans lequel les êtres humains sont gardés sous contrôle.
+
+Morpheus (Laurence Fishburne), le capitaine du Nebuchadnezzar, contacte Neo et pense que celui-ci est l’Élu qui peut libérer les êtres humains du joug des machines et prendre le contrôle de la matrice
+
+OBJECTIFS:
 1. Comme pour les étapes précédentes, teste toutes les expressions régulières du challenge sur le site http://regexr.com/, sur le même texte d'exemple, disponible pour rappel sur le Gist suivant.
 2. Trouve l'expression régulière qui cherche la seule occurrence du deuxième prénom de Néo (soit le A. de "Thomas A. Anderson).
     Hint : cherches vite Néo avant qu'il ne s'échappe...
@@ -12,7 +22,7 @@
 6. Trouve l'expression régulière qui correspond à l'url de la fiche du fils sur IMDB https://www.imdb.com/title/tt0133093 (attention à ne pas sélectionner les parenthèses).
 
 
-Résultats:
+RESULTATS:
 1 - 
 2 - A\.
 3 - [0-9]{2}[\/\-][0-9]{2}[\/\-][0-9]{4}
